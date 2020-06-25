@@ -3,44 +3,40 @@ package org.mitchellpottratz.bertclient;
 
 
 public class BertClient {
-	private String host;
-	private int port;
+	private String endpoint;
 
 
 	public BertClient() {
-		host = "http://localhost";
-		port = 5556;
+		endpoint = "http://localhost:5556";
 	}
 
 	/**
 	 * 
-	 * @param host the host the bert server is running on
-	 * @param port the port the bert server is running on
+	 * @param endpoint the url the bert server is listening for requests
 	 */
-	public BertClient(String host, int port) {
-		this.host = host;
-		this.port = port;
+	public BertClient(String endpoint) {
+		this.endpoint = endpoint;
 	}
 
+	/**
+	 * 
+	 * @param text the string to encode
+	 * @return	the dense vector create from the text parameter 			
+	 */
+	// public float[] encode(String text) {
+		
+	// }  
 
 	/*
 		* getters and setters 
 	*/
 
-	public String getHost() {
-		return host;
+	public String getEndpoint() {
+		return endpoint;
 	}
 
-	public void setHost(String host) {
-		this.host = host;
-	}
-
-	public int getPort() {
-		return port;
-	}
-
-	public void setPort(int port) {
-		this.port = port;
+	public void setEndpoint(String endpoint) {
+		this.endpoint = endpoint;
 	}
 
 }

@@ -15,6 +15,8 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:29.0-jre'
 
+    implementation 'org.apache.httpcomponents:httpclient:4.5.12'
+
     // Use JUnit test framework
     testImplementation 'junit:junit:4.13'
 }
