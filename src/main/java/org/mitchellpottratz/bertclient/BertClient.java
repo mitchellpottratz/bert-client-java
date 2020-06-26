@@ -11,18 +11,21 @@ import net.dongliu.requests.Requests;
 
 public class BertClient {
 	private String endpoint;
+	private int dims;
 
 
 	public BertClient() {
 		endpoint = "http://localhost:5556/encode";
+		dims = 768;
 	}
 
 	/**
 	 * 
 	 * @param endpoint the url the bert server is listening for requests on
 	 */
-	public BertClient(String endpoint) {
+	public BertClient(String endpoint, int dims) {
 		this.endpoint = endpoint;
+		this.dims = dims;
 	}
 
 	/**
@@ -52,7 +55,7 @@ public class BertClient {
 
 
 	public float[] parseStringToVector(String string) {
-		float[] vector = new float[768];
+		float[] vector = new float[dims];
 		String[] stringArray = string.substring(1, string.length() - 1).split(",");
 
 		for (int i = 0; i < stringArray.length; i++) {
@@ -73,6 +76,14 @@ public class BertClient {
 
 	public void setEndpoint(String endpoint) {
 		this.endpoint = endpoint;
+	}
+
+	public int getDims() {
+		return dims;
+	}
+
+	public void setDims(int dims) {
+		this.dims = dims;
 	}
 
 }
